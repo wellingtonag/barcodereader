@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <title>Leitor de códigos de barras Web</title>
+    <link rel="stylesheet" href="./styles/normalize.css" />
+    <link rel="stylesheet" href="./styles/reset.css" />
+    <link rel="stylesheet" href="styles/styles.css" />
+    <link rel="stylesheet" href="styles/video.css" />
+    <link rel="icon" href="images/16x16.png" sizes="16x16" type="image/png" />
+    <link rel="icon" href="images/32x32.png" sizes="32x32" type="image/png" />
+    <link rel="icon" href="images/64x64.png" sizes="64x64" type="image/png" />
+    <link rel="shortcut icon" href="images/64x64.png" />
+    <link rel="apple-touch-icon" href="images/64x64.png" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+
+  <body>
+    <div class="row">
+      <div class="top-img">
+        <img src="images/barcodedir.png" class="mobile-img" />
+      </div>
+      <div class="column left">
+        <div class="wrapper">
+          <div class="form-control center mt" id="form-login">
+            <img src="images/logo.png" class="logo-img center" />
+            <p>Aponte o código de barras para a câmera</p>
+            <div id="camera" class="input-control center"></div>
+            <!--IMAGEM CÓDIGO DE BARRAS-->
+            <!-- <img src="images/barcod.png" class="logo-img center"> -->
+            <div class="input-result">
+              <p>Copie o código a seguir:</p>
+              <div
+                id="resultado"
+                name="resultado"
+                class="input-cod-form input-form"
+              ></div>
+            </div>
+            <div class="input-control">
+              <!-- BOTÃO COPIAR -->
+              <button
+                id="copiarTexto"
+                onclick="copiarTexto()"
+                class="btn btn-primary bg-color-2 color-white"
+              >
+                Copiar
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="column right d-none">
+        <img src="images/scannergr.png" class="aside-img" />
+      </div>
+      <div class="bottom-img">
+        <img src="images/barcodeesq.png" class="mobile-img" />
+      </div>
+    </div>
+
+    <script src="scripts/quagga.min.js" charset="UTF-8"></script>
+
+    <!-- SCRIPT CAMERA -->
+    <script>
+      Quagga.init(
+        {
+          inputStream: {
+            name: "Live",
+            type: "LiveStream",
+            target: document.querySelector("#camera"),
+            constraints: {
+              width: { min: 1280 },
+              height: { min: 720 },
+              facingMode: "environment",
+              aspectRatio: { min: 1, max: 2 },
+            },
+          },
+          decoder: {
+            readers: ["code_128_reader", "ean_reader"],
+          },
+        },
+        function (err) {
+          if (err) {
+            console.log(err);
+            return;
+          }
+          console.log("Initialization finished. Ready to start");
+          Quagga.start();
+        }
+      );
+
+      Quagga.onDetected(function (data) {
+        console.log(data.codeResult.code);
+        document.querySelector("#resultado").innerText = data.codeResult.code;
+        copiarTexto();
+      });
+    </script>
+    <!-- SCRIPT BOTÃO COPIAR -->
+    <script>
+      function copiarTexto() {
+        const resultado = document.querySelector("#resultado");
+        resultado.focus();
+        const range = document.createRange();
+        range.selectNode(resultado);
+        window.getSelection().addRange(range);
+        document.execCommand("copy");
+      }
+    </script>
+  </body>
+</html>

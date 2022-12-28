@@ -1,0 +1,338 @@
+@font-face {
+  font-family: "Poppins";
+  src: url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;500&display=swap");
+  font-weight: 500;
+  font-style: normal;
+}
+
+* {
+  padding: 0;
+  margin: 0;
+  font-family: "Poppins";
+  font-weight: normal;
+  font-style: normal;
+}
+
+body,
+html {
+  z-index: 0;
+  overflow-x: hidden;
+  overflow-y: hidden;
+  background-color: rgb(254, 254, 254);
+}
+
+p {
+  padding: 0 0 10px 0;
+  color: #4f4f4f;
+  font-size: 17px;
+  font-family: "Poppins";
+  font-weight: 500;
+}
+
+.row {
+  position: relative;
+  width: 100%;
+  min-width: 100%;
+  max-width: 1200px;
+  height: 100vh;
+  min-height: 585px;
+  display: block;
+  padding: 0;
+  background-color: rgb(254, 254, 254);
+}
+
+.column {
+  box-sizing: border-box;
+  width: 100%;
+  height: 100vh;
+}
+
+.left {
+  float: left;
+}
+
+.right {
+  float: right;
+}
+
+.center {
+  display: block;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.d-none {
+  display: none;
+}
+
+.btn {
+  position: relative;
+  border: none;
+  border-radius: 5px;
+  padding: 10px 0;
+  font-family: "Poppins";
+  font-weight: 500;
+  font-style: normal;
+  transition: all 0.2s ease-in-out;
+  z-index: 2;
+}
+
+.btn:hover {
+  cursor: pointer;
+  opacity: 0.8;
+}
+
+.mt {
+  margin-top: 80px;
+}
+
+.bg-color-1 {
+  background-color: #f2f2f2;
+}
+
+.bg-color-2 {
+  background-color: #3c4049;
+}
+
+.color-white {
+  color: #fff;
+}
+
+.aside-img {
+  position: absolute;
+  max-width: 380px;
+  width: 100%;
+  bottom: 0;
+  right: 0;
+}
+
+.btn-primary {
+  width: 82%;
+  font-size: 21px;
+  margin-top: 40px;
+}
+
+.logo-img {
+  position: relative;
+  width: 300px;
+  padding: 30px 0 40px 0;
+  z-index: 3;
+}
+
+.form-control {
+  padding: 0 20px;
+  max-width: 300px;
+  width: 100%;
+}
+
+.camera {
+  max-width: 100%;
+}
+
+video {
+  max-width: 100%;
+  border: 1px solid #dbdbdb;
+  border-radius: 5px;
+  padding: 2px;
+  object-fit: cover;
+  object-position: center 25%;
+  /*  display: none; OCULTA O DISPLAY */
+}
+
+.drawingBuffer {
+  max-width: 1em;
+  max-height: 1em;
+}
+
+.input-control {
+  padding-bottom: 40px;
+  max-width: 100%;
+  max-height: 200px;
+  margin-bottom: 20px;
+}
+
+/* CÓDIGO TESTE COPY COLA - INPUT BUTTON */
+
+input:focus {
+  outline: none;
+}
+
+button {
+  background-color: #5c5c8b;
+  color: white;
+  text-transform: uppercase;
+  transition: 0.3s;
+}
+
+button:hover {
+  background-color: #5c5c8b;
+  transition: 0.3s;
+}
+
+/* FIM DO CÓDIGO TESTE COPY COLA - INPUT BUTTON */
+
+.input-form {
+  width: 250px;
+  border: 1px solid #dbdbdb;
+  border-radius: 5px;
+  padding: 12px 0 12px 0px;
+  font-size: 18px;
+  font-family: "Poppins";
+  font-weight: 400;
+  font-style: normal;
+  box-sizing: border-box;
+  color: #4f4f4f;
+  background-color: #fff;
+}
+/* Propriedades caixa resultado*/
+.input-cod-form {
+  width: 100%;
+  height: 46px;
+  text-align: center;
+  padding-left: 0px;
+  display: inline-block;
+}
+
+.input-result {
+  padding-bottom: 24px;
+  max-width: 100%;
+  max-height: 200px;
+  pointer-events: none;
+}
+
+.resultado {
+  font-size: 18px;
+  font-family: "Poppins";
+  margin-left: 2px;
+}
+
+.error-form-text {
+  color: #ff0000;
+  width: 100%;
+  padding: 12px 0 12px 13px;
+  font-size: 18px;
+}
+
+.top-img {
+  box-sizing: border-box;
+  position: absolute;
+  top: 0;
+  right: 0;
+  max-width: 80px;
+}
+
+.bottom-img {
+  box-sizing: border-box;
+  position: absolute;
+  bottom: -4px;
+  left: 0;
+  max-width: 80px;
+}
+
+.mobile-img {
+  width: 150%;
+}
+
+.g-recaptcha {
+  transform: scale(0.8);
+}
+
+.img-captcha {
+  border-radius: 0.4em;
+  width: 100px;
+  /* tamanho da largura da imagem do captcha*/
+  height: 42.4px;
+  /* tamanho da altura da imagem do captcha*/
+}
+
+.icons-captcha {
+  width: 1.2em;
+  height: 1.2em;
+  display: inline-block;
+}
+
+.icons-captcha:hover {
+  cursor: pointer;
+  opacity: 0.5;
+}
+
+.refresh-captcha {
+  display: inline-block;
+}
+
+.error-invisible {
+  display: none;
+}
+
+.div-captcha {
+  display: inline-block;
+}
+
+@media screen and (min-width: 468px) {
+  .row {
+    min-height: 100vh;
+  }
+
+  .mt {
+    margin-top: 80px;
+  }
+  .wrapper {
+    display: block;
+    margin: 0 auto;
+  }
+  .logo-img {
+    width: 370px;
+    padding: 40px 0 50px 0;
+  }
+
+  .top-img {
+    max-width: 150px;
+  }
+
+  .bottom-img {
+    max-width: 100px;
+  }
+
+  .form-control {
+    max-width: 370px;
+  }
+
+  .g-recaptcha {
+    transform: scale(1);
+  }
+}
+
+@media screen and (min-width: 1200px) {
+  .row {
+    min-height: 100vh;
+  }
+
+  .mt {
+    margin-top: 80px;
+  }
+  .wrapper {
+    display: block;
+    margin: 0 auto;
+  }
+  .center {
+    display: block;
+    text-align: center;
+  }
+
+  .bottom-img,
+  .top-img {
+    display: none;
+  }
+
+  .d-none {
+    display: block;
+  }
+
+  .column {
+    width: 100%;
+  }
+
+  .aside-img {
+    max-width: 500px;
+  }
+}

@@ -176,7 +176,7 @@ button:hover {
   border: 1px solid #dbdbdb;
   border-radius: 5px;
   padding: 12px 0 12px 0px;
-  font-size: 18px;
+  font-size: 16px;
   font-family: "Poppins";
   font-weight: 400;
   font-style: normal;
@@ -272,7 +272,7 @@ button:hover {
   .row {
     min-height: 100vh;
   }
-
+  
   .mt {
     margin-top: 80px;
   }
@@ -306,7 +306,9 @@ button:hover {
   .row {
     min-height: 100vh;
   }
-
+  .input-form {
+   font-size: 13px;
+  }
   .mt {
     margin-top: 80px;
   }
